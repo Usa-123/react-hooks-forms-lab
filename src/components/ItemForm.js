@@ -1,24 +1,20 @@
+// src/components/ItemForm.js
 import React from "react";
-import { v4 as uuid } from "uuid";
 
-function ItemForm(props) {
+function ItemForm({ onItemFormSubmit }) {
   return (
-    <form className="NewItem">
-      <label>
-        Name:
-        <input type="text" name="name" />
-      </label>
+    <form onSubmit={onItemFormSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" />
 
-      <label>
-        Category:
-        <select name="category">
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Dessert">Dessert</option>
-        </select>
-      </label>
+      <label htmlFor="category">Category:</label>
+      <select id="category" name="category">
+        <option value="Produce">Produce</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Dessert">Dessert</option>
+      </select>
 
-      <button type="submit">Add to List</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
